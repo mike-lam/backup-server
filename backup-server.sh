@@ -1,3 +1,4 @@
+#!/bin/bash
 #set -x
 while true; do  #loop infinitely to produce backups or delete old backups every $SLEEP time
   sleep 9999
