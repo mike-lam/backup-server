@@ -1,8 +1,8 @@
-#!/bin/bash
 #set -x
+echo "DEBUG 1">> /var/log/vsftpd/debug.log
 while true; do  #loop infinitely to produce backups or delete old backups every $SLEEP time
   sleep 9999
-  echo "delete the loop DEBUG"
+  echo "delete the loop DEBUG" >>>> /var/log/vsftpd/debug.log
 done
 
 # these GLOBAL variables should be set in docker-compose.yml file as environment variables, however default values are provided here which makes testing easier to do.

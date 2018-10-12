@@ -6,4 +6,4 @@ COPY backup-server.sh /usr/local/bin/backup-server.sh
 RUN touch /var/log/backup.log
 
 # Run the command on container startup
-CMD ["/usr/sbin/run-vsftpd.sh; /usr/local/bin/backup-server.sh"]
+CMD ["/usr/sbin/run-vsftpd.sh"]
