@@ -1,6 +1,8 @@
 FROM fauria/vsftpd:latest
 
 COPY backup-server.sh /usr/local/bin/backup-server.sh
+# uses BACKGROUND YES
+COPY vsftpd.conf /etc/vsftpd.conf
 
 # Create the log file to be able to run tail
 RUN touch /var/log/backup.log
