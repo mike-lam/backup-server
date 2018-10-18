@@ -21,9 +21,18 @@ keep_only_log_tail() {
   rm /var/log/vsftpd/backup-server.tmp
 }
 
+echo "Starting /usr/sbin/run-vsftpd.sh"  2>&1 | tee -a /var/log/vsftpd/backup-server.log
+echo "LOG_SIZE=$LOG_SIZE"  2>&1 | tee -a /var/log/vsftpd/backup-server.log
+/usr/sbin/run-vsftpd.sh
+echo "before Loop"  2>&1 | tee -a /var/log/vsftpd/backup-server.log
+
 while true; do  #loop infinitely to delete old backups every $SLEEP time
+echo "in Loop 1"  2>&1 | tee -a /var/log/vsftpd/backup-server.log
+
   delete_old_backups
   keep_only_log_tail
   sleep $SLEEP
+echo "in Loop 1"  2>&1 | tee -a /var/log/vsftpd/backup-server.log
+
 done
 
