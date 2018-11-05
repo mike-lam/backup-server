@@ -1,6 +1,9 @@
 FROM fauria/vsftpd:latest
 
 COPY backup-server.sh /usr/local/bin/backup-server.sh
+COPY backup-process.sh /usr/local/bin/backup-process.sh
+COPY backup-run-one.sh  /usr/local/bin/backup-run-one.sh
+
 # uses BACKGROUND YES
 COPY vsftpd.conf /etc/vsftpd/vsftpd.conf
 
