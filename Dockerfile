@@ -1,4 +1,4 @@
-ROM fauria/vsftpd:latest
+FROM fauria/vsftpd:latest
 
 COPY backup-server.sh /usr/local/bin/backup-server.sh
 # uses BACKGROUND YES
